@@ -1,0 +1,305 @@
+/*Product Description Area Css*/
+/* product overview*/
+
+.product_description_area {
+    margin-bottom: 100px;
+}
+
+.product_description_area .nav.nav-tabs {
+    background: #f1f6f7;
+    text-align: center;
+    display: block;
+    border: none;
+    padding: 10px 0px
+}
+
+.product_description_area .nav.nav-tabs li {
+    display: inline-block;
+    margin-right: 7px
+}
+
+.product_description_area .nav.nav-tabs li:last-child {
+    margin-right: 0px
+}
+
+@media (max-width: 441px) {
+    .product_description_area .nav.nav-tabs li:last-child {
+        margin-top: 15px
+    }
+}
+
+.product_description_area .nav.nav-tabs li a {
+    padding: 0px;
+    border: none;
+    line-height: 38px;
+    background: #fff;
+    border: 1px solid #eeeeee;
+    border-radius: 30px;
+    padding: 0px 30px;
+    color: #222;
+    font-size: 14px;
+    font-weight: normal
+}
+
+@media (max-width: 570px) {
+    .product_description_area .nav.nav-tabs li a {
+        padding: 0 15px
+    }
+}
+
+.product_description_area .nav.nav-tabs li a.active {
+    color: #fff;
+    /*background: #384aeb;*/
+    background: #717fe0;
+    /*border-color: #384aeb*/
+}
+
+.product_description_area .tab-content {
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 30px 30px 15px 30px
+}
+
+.product_description_area .tab-content .total_rate .box_total {
+    background: #f1f6f7;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+.product_description_area .tab-content .total_rate .box_total h4 {
+    font-size: 48px;
+    font-weight: bold;
+    color: green;
+}
+
+.product_description_area .tab-content .total_rate .box_total h5 {
+    color: #333333;
+    margin-bottom: 0px;
+    font-size: 24px
+}
+
+.product_description_area .tab-content .total_rate .box_total h6 {
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 0px;
+    font-size: 14px;
+    color: #555555;
+    font-weight: normal
+}
+
+.product_description_area .tab-content .total_rate .rating_list {
+    margin-bottom: 30px
+}
+
+.product_description_area .tab-content .total_rate .rating_list h3 {
+    font-size: 18px;
+    color: #222;
+    font-weight: 500;
+    margin-bottom: 10px
+}
+
+.product_description_area .tab-content .total_rate .rating_list .list li a {
+    font-size: 15px;
+    color: #555555
+}
+
+.product_description_area .tab-content .total_rate .rating_list .list li a i {
+    color: #fbd600
+}
+
+.product_description_area .tab-content .total_rate .rating_list .list li a i:first-child {
+    margin-left: 15px
+}
+
+.product_description_area .tab-content .total_rate .rating_list .list li a i:last-child {
+    margin-right: 15px
+}
+
+.product_description_area .tab-content .total_rate .rating_list .list li:nth-child a i:last-child {
+    color: #eeeeee
+}
+
+.product_description_area .tab-content .table {
+    margin-bottom: 0px
+}
+
+.product_description_area .tab-content .table tbody tr td {
+    padding-left: 65px;
+    padding-right: 65px;
+    padding-top: 14px;
+    padding-bottom: 14px
+}
+
+.product_description_area .tab-content .table tbody tr td h5 {
+    font-size: 14px;
+    font-weight: normal;
+    color: #777;
+    margin-bottom: 0px;
+    white-space: nowrap
+}
+
+.product_description_area .tab-content .table tbody tr:first-child td {
+    border-top: 0px
+}
+
+.review_item {
+    margin-bottom: 10px
+}
+
+.review_item:last-child {
+    margin-bottom: 0px
+}
+
+.review_item .media {
+    position: relative
+}
+
+.review_item .media .d-flex {
+    padding-right: 15px
+}
+
+.review_item .media .media-body {
+    vertical-align: middle;
+    align-self: center
+}
+
+.review_item .media .media-body h4 {
+    font-size: 16px;
+    color: #222;
+    margin-bottom: 4px
+}
+
+.review_item .media .media-body i {
+    color: #fbd600
+}
+
+.review_item .media .media-body h5 {
+    font-size: 13px;
+    font-weight: normal;
+    color: #777
+}
+
+.review_item .media .media-body .reply_btn {
+    border: 1px solid #e0e0e0;
+    padding: 0px 28px;
+    display: inline-block;
+    line-height: 32px;
+    border-radius: 16px;
+    font-size: 14px;
+    color: #222;
+    position: absolute;
+    right: 0px;
+    top: 14px;
+@icnlude transition
+}
+
+.review_item .media .media-body .reply_btn:hover {
+    background: #384aeb;
+    border-color: #384aeb;
+    color: #fff
+}
+
+.review_item p {
+    padding-top: 10px;
+    margin-bottom: 0px
+}
+
+.review_item.reply {
+    padding-left: 28px
+}
+
+.review_box h4 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 20px
+}
+
+.review_box p {
+    margin-bottom: 0px;
+    color: #555555;
+    display: inline-block
+}
+
+.review_box .list {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px
+}
+
+.review_box .list li {
+    display: inline-block
+}
+
+.review_box .list li a {
+    display: inline-block;
+    color: #fbd600
+}
+
+.review_box .contact_form {
+    margin-top: 15px
+}
+
+.review_box .primary-btn {
+    line-height: 38px !important;
+    padding: 0px 38px;
+    text-transform: uppercase;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none
+}
+
+.form-review .form-control {
+    height: 46px;
+    background: transparent;
+    border: 1px solid #EEEEEE;
+    font-size: 14px;
+    color: #999999
+}
+
+.form-contact .form-group {
+    margin-bottom: 10px
+}
+
+.form-contact .form-control {
+    border-radius: 0;
+    height: 40px;
+    padding-left: 18px;
+    border-color: transparent;
+    background: rgba(130, 139, 178, 0.1)
+}
+
+.form-contact .form-control:focus {
+    outline: 0;
+    box-shadow: none
+}
+
+.form-contact .form-control::placeholder {
+    font-size: 14px;
+    color: #999999
+}
+
+.form-contact .different-control {
+    height: 100% !important
+}
+
+.form-contact button {
+    border: 0
+}
+
+.button-review {
+    padding: 12px 40px;
+    border-radius: 30px
+}
+
+/*.button:hover{border-color:#384aeb;background:transparent;color:#222}*/
+.button:hover {
+    border-color: #384aeb;
+    background: black;
+    color: #fff
+}
+
+.button--active {
+    background: #717fe0;
+    color: #fff
+}

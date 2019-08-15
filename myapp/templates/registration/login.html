@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block registartion-css-links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/roboto-font.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/line-awesome/css/line-awesome.min.css' %}">
+    <!-- Jquery -->
+    <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+{% endblock %}
+
+{#{% block desktop-nav-content %}#}
+{#{% endblock %}#}
+
+{#{% block all-header-mobile %}#}
+{#    #}
+{#{% endblock %}#}
+
+{% block content-1 %}
+    <div class="page-content">
+        <div class="form-v2-content">
+            <div class="form-left">
+                <img src="{% static 'images/form-v2.jpg' %}" alt="form">
+                <div class="text-1">
+                    <p>Experience the lifestyle<span>try Unlimited</span></p>
+                </div>
+                <div class="text-2">
+{#                    <p><span>$9.99</span>/ Month</p>#}
+                       <p>Great deals starting at just <span>$9.99</span></p>
+                </div>
+            </div>
+
+            <form class="form-detail" method="post" id="myform">
+                {% csrf_token %}
+                {% if form.non_field_errors %}
+                    <div class="alert alert-danger" role="alert">
+                        {% for error in form.non_field_errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+                <h2 style="font-family: monospace">Login</h2>
+                <div class="form-row">
+                    <label>Username:</label>
+                    {{ form.username }}
+                </div>
+                <!-- <div class="form-row">
+                    <label for="your_email">Your Email:</label>
+                    <input type="text" name="your_email" id="your_email" class="input-text" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+                </div> -->
+                <div class="form-row">
+                    <label for="password">Password:</label>
+                    {{ form.password }}
+                </div>
+                <div class="form-row-last pt-2" style="margin-left: -4px">
+                    <input style="width: 90%" type="submit" name="login" class="login" value="Login">
+                </div>
+                <div class="mt-0">
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <div class="new-to-infinity">
+                    <hr>
+                    <h5 class="text-center pt-2" style="font-family: 'Arial Black'">New to Infinty?</h5><br>
+                    <div class="pt-2">
+                    <a href="{% url 'register' %}" class="btn btn-secondary" style="margin-left: -4px; width: 100%" >Create your Infinity account</a>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block registration-scripts %}
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+{% endblock %}

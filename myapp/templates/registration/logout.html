@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block registartion-css-links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/roboto-font.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/line-awesome/css/line-awesome.min.css' %}">
+    <!-- Jquery -->
+    <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+{% endblock %}
+{% block diffNavStyleforMultiplePage %}
+    <header class="header-v4">
+{% endblock %}
+{% block endheader %}
+    </header>
+{% endblock %}
+{#{% block desktop-nav-content %}#}
+{#{% endblock %}#}
+
+{#{% block all-header-mobile %}#}
+{#    #}
+{#{% endblock %}#}
+
+{% block content-1 %}
+    <div class="page-content">
+        <div class="container">
+            <div class="logout-content">
+                <div class="row">
+                    <h3>You are Successfully Logged Out! <a href="{% url 'login' %}">Continue Shopping...</a></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block registration-scripts %}
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+{% endblock %}

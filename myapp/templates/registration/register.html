@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block registartion-css-links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/roboto-font.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/line-awesome/css/line-awesome.min.css' %}">
+    <!-- Jquery -->
+    <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+{% endblock %}
+
+{#{% block desktop-nav-content %}#}
+{#{% endblock %}#}
+
+{#{% block all-header-mobile %}#}
+{#    #}
+{#{% endblock %}#}
+
+{% block content-1 %}
+
+
+
+    <div class="page-content">
+        <div class="form-v2-content">
+            <div class="form-left">
+                <img src="{% static 'images/form-v2.jpg' %}" alt="form">
+                <div class="text-1">
+                    <p>Bring Your Music Along<span>try Unlimited</span></p>
+                </div>
+                <div class="text-2">
+                    <p><span>$9.99</span>/ Month</p>
+                </div>
+            </div>
+            <form class="form-detail" method="post" id="myform">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <h2 style="font-family: monospace">Create Account</h2>
+                <div class="form-row">
+                    <label for="full-name">Username:</label>
+                    {{ form.username }}
+                    <h6 class="pb-2" style="color: red">{{ form.username.errors }}</h6>
+                </div>
+                <div class="form-row">
+                    <label for="your_email">Your Email:</label>
+                    {{ form.email }}
+                    <h6 class="pb-2" style="color: red;">{{ form.email.errors }}</h6>
+                </div>
+                <div class="form-row">
+                    <label for="password">Password:</label>
+                    {{ form.password1 }}
+                    <h6 class="pb-2" style="color: red">{{ form.password1.errors }}</h6>
+                </div>
+                <div class="form-row">
+                    <label for="comfirm-password">Confirm Password:</label>
+                    {{ form.password2 }}
+                    <h6 style="color: red">{{ form.password2.errors }}</h6>
+                </div>
+{#                <br>#}
+{#                <div class="form-checkbox">#}
+{#                    <label class="container"><p><input type="checkbox" name="agree" id="agree" required><span class="checkmark"></span>By signing up, you agree to the <a href="#" class="text">Term of#}
+{#                        Service</a></p>#}
+{#                        #}
+{#                    </label>#}
+{#                </div>#}
+                <div class="form-row-last" style="margin-left: -4px; margin-bottom: -8px">
+                    <input style="width: 90%" type="submit" name="register" class="register" value="Register">
+                </div>
+                <div class="already-have-an-account">
+                    <hr>
+                    <h6 class="text-center pt-1" style="font-family: 'Arial Black'">Already have an Account? <a
+                            href="{% url 'login' %}">Login</a></h6><br>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block registration-scripts %}
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
