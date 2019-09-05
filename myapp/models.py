@@ -75,7 +75,7 @@ class Cart(models.Model):
     product = models.ForeignKey(Product, null=True, on_delete=models.CASCADE)  # add this new attribute to cart
 
     count = models.PositiveIntegerField(default=1)
-    size = models.CharField(max_length=20, choices=SIZE_CHOICES)
+    size = models.CharField(max_length=20, choices=SIZE_CHOICES, default='NA')
     color = models.CharField(max_length=20, choices=COLOR_CHOICES)
     price = models.DecimalField(default=0.0, max_digits=10, decimal_places=2)
     entry_price = models.DecimalField(default=0.0, max_digits=10, decimal_places=2)

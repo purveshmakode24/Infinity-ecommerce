@@ -196,24 +196,27 @@ def blog_detail(request):
     return render(request, 'blog-detail.html', {})
 
 
-def cart(request):
+def cart(request, username):
     user = User.objects.get(username=request.user)
     current_user_cart_entries = user.current_user_cart.all()
     current_user_cart_entries_count = user.current_user_cart.all().count()
-    for item in current_user_cart_entries:
-        item_count = item.count
-        entry_price = item.entry_price
-        context = {
-            'current_user_cart_entries': current_user_cart_entries,
-            'current_user_cart_entries_count': current_user_cart_entries_count,
-            'item_count': item_count,
-            'entry_price': entry_price,
-        }
-        return render(request, 'shoping-cart.html', context)
+    print(current_user_cart_entries)
+    print(current_user_cart_entries_count)
+    # for item in current_user_cart_entries:
+    #     item_count = item.count
+    #     print("count in cart:::", item_count)
+    #     entry_price = item.entry_price
+    context = {
+        'current_user_cart_entries': current_user_cart_entries,
+        'current_user_cart_entries_count': current_user_cart_entries_count,
+        # 'item_count': item_count,
+        # 'entry_price': entry_price,
+    }
+    return render(request, 'shoping-cart.html', context)
 
 
 @login_required
-def add_to_cart(request, user_id, p_id):
+def add_to_cart(request, user_id, cat_id, p_id):
     # if request.method == 'POST':
     #     req_product_size = request.POST.get('size')
     #     req_product_color = request.POST.get('color')
@@ -230,7 +233,11 @@ def add_to_cart(request, user_id, p_id):
     #     # return redirect('error_404')
     #     return HttpResponse('Error:404')
     # return redirect('infinity_home')
+
+    # if cat_id == 3: remove size (size there is no size in accessoriess categories)
+
     if request.method == 'POST':
+        # products = Product.objects.all()
         form = AddToCartForm(request.POST)
         if form.is_valid():
             count = form.cleaned_data['count']
@@ -246,6 +253,15 @@ def add_to_cart(request, user_id, p_id):
             return redirect('infinity_home')
     else:
         return HttpResponse("error:404")
+
+
+def del_item_from_cart(request, username, item_id):
+    user = User.objects.get(username=request.user)
+    current_user_cart_entries = user.current_user_cart.all()
+    current_user_cart_entries_count = user.current_user_cart.all().count()
+    product_to_delete = Cart.objects.filter(product_id=item_id)
+    product_to_delete.delete()
+    return redirect('shopping-cart', username)
 
 
 def register(request):

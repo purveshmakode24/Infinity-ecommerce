@@ -120,71 +120,75 @@
                             </p>
 
                             <!--  -->{% if user.is_authenticated %}
-                            <form method="POST" action="{% url 'add_to_cart' user.id item.id %}">
-                            {% csrf_token %}
-                            <div class="p-t-33">
-                                <div class="flex-w flex-r-m p-b-10">
-                                    <div class="size-203 flex-c-m respon6">
-                                        Size
-                                    </div>
-
-                                    <div class="size-204 respon6-next">
-                                        <div class="rs1-select2 bor8 bg0">
-                                            {{ form.size }}
-                                            <div class="dropDownSelect2"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="flex-w flex-r-m p-b-10">
-                                    <div class="size-203 flex-c-m respon6">
-                                        Color
-                                    </div>
-
-                                    <div class="size-204 respon6-next">
-                                        <div class="rs1-select2 bor8 bg0">
-                                            {{ form.color }}
-                                            <div class="dropDownSelect2"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="flex-w flex-r-m p-b-10">
-                                    <div class="size-204 flex-w flex-m respon6-next">
-                                        <div class="wrap-num-product flex-w m-r-20 m-tb-10">
-                                            <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-                                                <i class="fs-16 zmdi zmdi-minus"></i>
+                            <form method="POST" action="{% url 'add_to_cart' user.id item.category_id item.id %}">
+                                {% csrf_token %}
+                                <div class="p-t-33">
+{#                                    {% if cat_id != 3 %}#}
+                                        <div class="flex-w flex-r-m p-b-10">
+                                            <div class="size-203 flex-c-m respon6">
+                                                Size
                                             </div>
 
-                                            {{ form.count }}
+                                            <div class="size-204 respon6-next">
+                                                <div class="rs1-select2 bor8 bg0">
+                                                    {{ form.size }}
+                                                    <div class="dropDownSelect2"></div>
+                                                </div>
+                                            </div>
 
-                                            <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-                                                <i class="fs-16 zmdi zmdi-plus"></i>
+                                        </div>
+{#                                    {% endif %}#}
+                                    <div class="flex-w flex-r-m p-b-10">
+                                        <div class="size-203 flex-c-m respon6">
+                                            Color
+                                        </div>
+
+                                        <div class="size-204 respon6-next">
+                                            <div class="rs1-select2 bor8 bg0">
+                                                {{ form.color }}
+                                                <div class="dropDownSelect2"></div>
                                             </div>
                                         </div>
-                                        <input type="number" name="price" value="{{ item.price }}" hidden>
+                                    </div>
+
+                                    <div class="flex-w flex-r-m p-b-10">
+                                        <div class="size-204 flex-w flex-m respon6-next">
+                                            <div class="wrap-num-product flex-w m-r-20 m-tb-10">
+                                                <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+                                                    <i class="fs-16 zmdi zmdi-minus"></i>
+                                                </div>
+
+                                                {{ form.count }}
+
+                                                <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
+                                                    <i class="fs-16 zmdi zmdi-plus"></i>
+                                                </div>
+                                            </div>
+                                            <input type="number" name="price" value="{{ item.price }}" hidden>
                                             <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
                                                 Add to cart
                                             </button>
-                                    </div>
-                                </div>
-                            </div>
-                            </form>
-                            {% else %}
-                            <div class="p-t-33">
-                                <div class="flex-w flex-r-m p-b-10">
-                                    <div class="size-203 flex-c-m respon6">
-                                        Size
-                                    </div>
-
-                                    <div class="size-204 respon6-next">
-                                        <div class="rs1-select2 bor8 bg0">
-                                            {{ form.size }}
-                                            <div class="dropDownSelect2"></div>
                                         </div>
                                     </div>
                                 </div>
+                            </form>
+                        {% else %}
+                            <div class="p-t-33">
+{#                                {% if cat_id != 3 %}#}
+                                    <div class="flex-w flex-r-m p-b-10">
+                                        <div class="size-203 flex-c-m respon6">
+                                            Size
+                                        </div>
 
+                                        <div class="size-204 respon6-next">
+                                            <div class="rs1-select2 bor8 bg0">
+                                                {{ form.size }}
+                                                <div class="dropDownSelect2"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+{#                                {% endif %}#}
                                 <div class="flex-w flex-r-m p-b-10">
                                     <div class="size-203 flex-c-m respon6">
                                         Color
@@ -212,9 +216,10 @@
                                             </div>
                                         </div>
                                         <input type="number" name="price" value="{{ item.price }}" hidden>
-                                            <a href="{% url 'login' %}" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-                                                Login to Add Item in Cart
-                                            </a>
+                                        <a href="{% url 'login' %}"
+                                           class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
+                                            Login to Add Item in Cart
+                                        </a>
                                     </div>
                                 </div>
                             </div>
