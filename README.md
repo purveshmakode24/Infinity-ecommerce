@@ -1,1 +1,1 @@
-# Infinity-ecommerce
+# Infinity-Shopify
