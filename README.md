@@ -1,1 +1,3 @@
-# Infinity-Shopify
+# Shopify
+
+- Clothing On The Go!
